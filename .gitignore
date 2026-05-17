@@ -1,0 +1,49 @@
+# -------------------------
+# Python / Virtual Environment
+# -------------------------
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# -------------------------
+# Jupyter Notebook
+# -------------------------
+.ipynb_checkpoints/
+.jupyter/
+*.nbconvert.ipynb
+
+# -------------------------
+# Data files (optional)
+# -------------------------
+
+
+# If you want to track sample data, remove "data/" above.
+
+# -------------------------
+# Logs / Debug
+# -------------------------
+*.log
+
+# -------------------------
+# OS-specific files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# IDE / Editor files
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# Environment / Dependency
+# -------------------------
+*.env
+.env.*
