@@ -14,11 +14,6 @@ REGEX_TEAM_PATTERN = r'.*\b(\w+)$'
 WASHINGTON_TEAM_NAMES = ['Washington Redskins', 'Washington Football Team']
 HOUSTON_TEAM_NAMES = ['Houston Oilers', 'Tennessee Oilers'] 
 
-
-# def column_to_lowercase(df, col_name):
-#     """Return the specified column lowercased."""
-#     return df[col_name].str.lower()
-
 def column_to_lowercase(series):
     """Return a lowercased copy of a Series."""
     return series.str.lower()
@@ -38,6 +33,3 @@ def column_replace_value(series, values_to_replace, replace_with):
 def column_convert_value(series, type):
     """Convert column type"""    
     return series.astype(type)
-
-# df_draft['name_for_merge'] = df_draft['name'].str.lower().str.strip().str.replace(regex_pattern, "", regex=True)
-# df_draft['team'] = np.where(df_draft['team'].isin(washington_team_names), 'commanders', df_draft['team'])
