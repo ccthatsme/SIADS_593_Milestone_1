@@ -1,7 +1,6 @@
 """Helper functions for column manipulation and cleaning.
 """
 
-import pandas as pd
 import string
 import re
 import numpy as np
@@ -12,7 +11,14 @@ REGEX_TEAM_PATTERN = r'.*\b(\w+)$'
 
 # Historical team names for mapping to current team names
 WASHINGTON_TEAM_NAMES = ['Washington Redskins', 'Washington Football Team']
-HOUSTON_TEAM_NAMES = ['Houston Oilers', 'Tennessee Oilers'] 
+HOUSTON_TEAM_NAMES = ['Houston Oilers', 'Tennessee Oilers']
+
+# Position categories
+# df_filtered['POS'] = df_filtered['POS'].replace({'FS': 'DB', 'SS': 'DB', 'CB': 'DB', 'DE': 'DL', 'DT': 'DL', 'OC': 'OL', 'OG': 'OL', 'OT': 'OL', 'FB': 'RB'})
+DEFENSIVE_BACKS = ['FS', 'SS', 'CB']
+DEFENSIVE_LINEMAN = ['DE', 'DT']
+OFFENSIVE_LINEMAN = ['OC', 'OG', 'OT']
+RUNNING_BACKS = ['FB']
 
 def column_to_lowercase(series):
     """Return a lowercased copy of a Series."""
