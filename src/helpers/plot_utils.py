@@ -4,7 +4,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 from ipywidgets import widgets, Checkbox, Output, Layout, GridBox
-from IPython.display import display
+from IPython.display import display, clear_output
 
 def change_selection_type(selection, col_dtype):
     try:
@@ -47,7 +47,6 @@ def plot_ras_series(ax, data, x_col, y_col, hue=None, title="", xlabel="Year", y
 
 def plot_lines(df, filter_col, selection, x_ticks, y_ticks):
     if len(selection) == 0:
-        display("Select at least one value")
         return
     
     col_dtype = df[filter_col].dtype
@@ -120,47 +119,8 @@ def plot_lines(df, filter_col, selection, x_ticks, y_ticks):
         plt.tight_layout()
         plt.show()
     
-    # if not multiple_selection(selection):
-    #     plt.figure(figsize=(12, 6))
-
-    #     ax = sns.lineplot(data=df_ras_filter_col, x='Year', y='RAS', hue=filter_col)
-    #     ax.legend(title=f"{'Position' if filter_col == 'POS' else 'Draft Round'} (Selected)", loc='lower right')
-    #     plt.title(f"Median RAS of Drafted NFL Player by {'Position(s)' if filter_col == 'POS' else 'Draft Round(s)'} each Year")
-    #     plt.xlabel("Year")
-    #     plt.ylabel("Median RAS")
-    #     plt.xticks(rotation=45, ticks=x_ticks)
-    #     plt.yticks(ticks=y_ticks)
-    #     plt.grid(True, alpha=0.3)
-    #     plt.tight_layout()
-    #     plt.show()
-    
-    # else:
-
-    #     fig, (ax1, ax2) = plt.subplots(2,1, figsize=(12, 6))
-
-    #     sns.lineplot(data=df_ras_filter_col, x='Year', y='RAS', hue=filter_col, ax=ax1)
-    #     ax1.legend(title=f"{'Position' if filter_col == 'POS' else 'Draft Round'} (Selected)", loc='lower right', bbox_to_anchor=(1.05, 1), ncols=4)
-    #     ax1.set_title(f"Median RAS of Drafted NFL Player by {'Position(s)' if filter_col == 'POS' else 'Draft Round(s)'} each Year")
-    #     ax1.set_xlabel("Year")
-    #     ax1.set_ylabel("Median RAS")
-    #     ax1.set_xticks(ticks=x_ticks)
-    #     ax1.set_xticklabels(labels=x_ticks, rotation=45, ha='right')
-    #     ax1.set_yticks(ticks=y_ticks)
-    #     ax1.grid(True, alpha=0.3)
-
-    #     sns.lineplot(data=df_var, x='Year', y='Variance', ax=ax2)
-    #     ax2.set_title(f"Variance of RAS Score Per Selected {'Position(s)' if filter_col == 'POS' else 'Draft Round(s)'} each Year")
-    #     ax2.set_xlabel("Year")
-    #     ax2.set_ylabel("Variance")
-    #     ax2.set_xticks(ticks=x_ticks)
-    #     ax2.set_xticklabels(labels=x_ticks, rotation=45, ha='right')
-    #     ax2.grid(True, alpha=0.3)
-
-
-    #     plt.tight_layout()
-    #     plt.show()
-    
 def interactive_line_plot_checkboxes(df, filter_col, x_ticks, y_ticks):
+    clear_output(wait=True)
     values = sorted(df[filter_col].dropna().unique())
     label = widgets.Label(f"Select {'Positions' if filter_col == 'POS' else 'Draft Rounds'}:")
     checkboxes = [Checkbox(
