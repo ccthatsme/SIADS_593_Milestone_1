@@ -1,7 +1,6 @@
 # SIADS 593: RAS Scores and NFL Success
 
-A collaborative data analysis project using Python, JupyterLab, and a clean, reproducible virtual environment.  
-This repository contains notebooks, reusable Python modules, and a standardized workflow so all contributors can work consistently.
+A collaborative data analysis project Looking at Relative Athletic Score among NFL players and how well it correlates to career success
 
 ---
 
@@ -9,6 +8,12 @@ This repository contains notebooks, reusable Python modules, and a standardized 
 
 pip install -r requirements.txt
 
-# Installed Dependencies? Run the following
+# Order of Notebook Execution
+
+1. merge_clean_datasets.ipynb
+2. bivariate_analysis.ipynb
+3. timeseries.ipynb
+
+# Installed Dependencies? Run the following to save the versions
 
 pip freeze > requirements.txt
