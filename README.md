@@ -15,9 +15,9 @@ Navigate to the project root directory
 
 # Create & Activate Virtual Environment using the terminal
 
-`python -m venv .venv`
-`source .venv/bin/activate   # macOS/Linux`
-`.venv\Scripts\activate      # Windows`
+- `python -m venv .venv`
+- `source .venv/bin/activate   # macOS/Linux`
+- `.venv\Scripts\activate      # Windows`
 
 # Installing Dependencies
 
