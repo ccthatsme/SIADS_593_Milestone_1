@@ -28,8 +28,9 @@ Navigate to the project root directory
 Each time you open a notebook, please select a kernel to use before running the cells
 
 1. merge_clean_datasets.ipynb
-2. bivariate_analysis.ipynb
-3. timeseries.ipynb
+2. timeseries.ipynb
+3. bivariate_analysis.ipynb
+4. linear_regression_analysis.ipynb
 
 # Jupyter Lab
 
